@@ -1,0 +1,19 @@
+Version 2.0.0rc1 - 16 June, 2020
+------------------------------------------------------------------------------
+This is a realease of HLSVDPROPY version 2.0.0, it is a 'pure Python' 
+implementation of the algorithm provided by the HLSVDPRO version 2.x package. 
+
+Note. We are starting with version 2.x to be in line with the version of
+HLSVDPRO to which it corresponds. 
+
+HLSVDPRO 2.x was adaptated to use PROPACK library version 2.1 to implement the 
+HLSVDPRO algorithm as described in:
+
+  Laudadio T, et.al. "Improved Lanczos algorithms for blackbox MRS data 
+  quantitation", Journal of Magnetic Resonance, Volume 157, pages 292-297, 2002.
+  
+we are using the scipy.linalg.sparse.svds() algorithm to replace PROPACK. 
+Otherwise, the algorithm remains the same.
+
+HLSVDPROPY version 2.0.0 is compatible with Python 2.7 and 3.x. 
+
