@@ -1,7 +1,7 @@
 Version 2.0.0rc1 - 16 June, 2020
 ------------------------------------------------------------------------------
-This is a realease of HLSVDPROPY version 2.0.0, it is a 'pure Python' 
-implementation of the algorithm provided by the HLSVDPRO version 2.x package. 
+This is HLSVDPROPY release version 2.0.0, it is a 'pure Python' implementation
+of the algorithm provided by the Fortran HLSVDPRO version 2.0.0 package.
 
 Note. We are starting with version 2.x to be in line with the version of
 HLSVDPRO to which it corresponds. 

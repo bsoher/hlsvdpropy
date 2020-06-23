@@ -54,7 +54,21 @@ plt.show()
 
 ```
 
-HLSVDPROPY Utility Functions
+HLSVDPROPY Methods
+------
+
+- `hlsvdpropy.hlsvdpro(data, nsv_sought, m=None, sparse=True)` - the main method 
+for running the hlsvdpro algorithm. It does not require the dwell time of the 
+time domain data, but it also does not convert the results to standard units. It
+does allow the user to specify the dimensions of the Hankel matrix, and whether
+a sparse SVD is performed or not.
+
+- `hlsvdpropy.hlsvd(data, nsv_sought, dwell_time)` - provides backwards 
+compatibility to the API for HLSVDPRO version 1.x. It calls the hlsvdpro() method
+with default values corresponding to the algorithm used in version 1.x. See 
+docstring for more information on the default values used.
+
+HLSVDPROPY Utility Methods
 ------
 - `hlsvdpropy.create_hlsvd_fids(result, npts, dwell, sum_results=False, convert=True)` - 
 can be used to create FIDs from the results tuple from either the `hlsvd()` 
@@ -75,7 +89,6 @@ This function converts the base64 encoded string saved in the TESTDATA dict
 into a numpy array for you. Additional information about the data and the 
 known values for fitting it via the hlsvd() method can be retrieved from 
 the TESTDATA dict.  See 'Example' for more usage information.
-
 
 Technical Overview and References
 ------

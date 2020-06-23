@@ -140,7 +140,7 @@ def hlsvdpro(data, nsv_sought, m=None, sparse=True):
         #      ...
         #    x_M   x_M-1 ... x_0
 
-        x = scipy.linalg.hankel(xx[:m - 1:-1], xx[m::-1])    # SVD of data matrix and truncation of U to form Uk
+        x = scipy.linalg.hankel(xx[:m - 1:-1], xx[m::-1])
     
     if sparse:
         u, s, vh = scipy.sparse.linalg.svds(x, k=k)
@@ -305,12 +305,12 @@ def _example():
     indat = TESTDATA
     dwell = indat['step_size']
     
-    sing0 = np.array(input['sing0'])
-    freq0 = np.array(input['freq0'])
-    ampl0 = np.array(input['ampl0'])
-    damp0 = np.array(input['damp0'])
-    phas0 = np.array(input['phas0'])
-    k = input['n_singular_values']
+    sing0 = np.array(indat['sing0'])
+    freq0 = np.array(indat['freq0'])
+    ampl0 = np.array(indat['ampl0'])
+    damp0 = np.array(indat['damp0'])
+    phas0 = np.array(indat['phas0'])
+    k = indat['n_singular_values']
 
     r = hlsvdpro(data, k, m=None, sparse=True)
     c = convert_hlsvd_result(r, dwell)
@@ -350,7 +350,7 @@ def _example():
     plt.plot(datt.real, color='r')
     plt.plot(fitt.real, color='b')
     plt.plot((datt-fitt).real, color='g')
-    plt.title('HLSVDPro fit overlay Data and Residual [Time]')
+    plt.title('HLSVDProPy fit overlay Data and Residual [Time]')
 
     datt[0] *= 0.5
     fitt[0] *= 0.5
@@ -359,7 +359,7 @@ def _example():
     plt.plot(np.fft.fft(_chop((datt))).real, color='r')
     plt.plot(np.fft.fft(_chop((fitt))).real, color='b')
     plt.plot(np.fft.fft(_chop((datt-fitt))).real, color='g')
-    plt.title('HLSVDPro fit overlay Data and Residual [Freq]')
+    plt.title('HLSVDProPy fit overlay Data and Residual [Freq]')
 
     plt.show()
     
