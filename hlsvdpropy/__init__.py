@@ -1,4 +1,5 @@
-"""This is a 'pure Python' implementation of the HLSVDPRO version 2.x package. 
+"""This is a 'pure Python' implementation of the 'hlsvdpro' algorithm found in 
+the HLSVDPRO package version 2.x. 
 
 Modules:
     hlsvd.py - contains methods to convert complex signal data into a fitted 
