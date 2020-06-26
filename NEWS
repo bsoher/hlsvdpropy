@@ -1,3 +1,18 @@
+
+Version 2.0.1 - 26 June, 2020
+------------------------------------------------------------------------------
+The default value for the SVD algorithm in hlsvdpro() has been set to use the
+scipy.linalgsvd() method by setting the default for the sparse keyword to False. 
+The user can still choose to set it to True if they want. Reason - After using 
+this code on a number of data sets in the Vespa-Analysis platform, we saw
+instability when data size or nsv_sought were set to 'edge' values. That is 
+either very small or very large. This was for data with 4096 point. So we were 
+able to push the values far enough to test rigorously.  The fix for this seems 
+to be to use the 'full' scipy.linalg.svd() method and truncate the results to 
+the nsv_sought. 
+
+
+
 Version 2.0.0 - 16 June, 2020
 ------------------------------------------------------------------------------
 This is HLSVDPROPY release version 2.0.0, it is a 'pure Python' implementation

@@ -80,7 +80,7 @@ def hlsvd(data, nsv_sought, dwell_time):
 
 
     
-def hlsvdpro(data, nsv_sought, m=None, sparse=True):
+def hlsvdpro(data, nsv_sought, m=None, sparse=False):
     """A pure Python implementation of the HLSVDPRO version 2.x package.
     
     Computes a 'sum of lorentzians' model for the complex 'data' passed in 
@@ -99,7 +99,7 @@ def hlsvdpro(data, nsv_sought, m=None, sparse=True):
             the Hankel matrix used to compute the singular values. Hankel 
             matrix shape is (L+1,L) where L = len(data)-m-1
 
-        sparse (bool): (optional) default True. If set to True, the  
+        sparse (bool): (optional) default False. If set to True, the  
             scipy.sparse.linalg.svds() is used to calculate singular values and 
             nsv_sought is passed in as a parameter. If False, scipy.linalg.svd()
             is used to calculate the singular values, and nsv_sought is used to 
