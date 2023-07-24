@@ -36,7 +36,7 @@ AUTHOR = "Brian J. Soher"
 AUTHOR_EMAIL = "bsoher@briansoher.com"
 MAINTAINER = "Brian J. Soher"
 MAINTAINER_EMAIL = "bsoher@briansoher.com"
-URL = "http://scion.duhs.duke.edu/projects/hlsvdpro"
+URL = "https://github.com/bsoher/hlsvdpropy"
 
 # http://pypi.python.org/pypi?:action=list_classifiers
 CLASSIFIERS = ['Development Status :: 5 - Production/Stable',
