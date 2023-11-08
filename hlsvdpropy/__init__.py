@@ -16,11 +16,9 @@ Dependencies:
 """      
 
 from __future__ import division
-
-# 3rd party imports
-import pkg_resources
+from importlib.metadata import version
 
 # This removes a useless layer of naming indirection.
 from hlsvdpropy.hlsvd import *
 
-__version__ = pkg_resources.get_distribution('hlsvdpropy').version
+__version__ = version('hlsvdpropy')
