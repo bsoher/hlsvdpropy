@@ -1,3 +1,10 @@
+Version 2.0.2 - 24 July, 2023
+------------------------------------------------------------------------------
+This is a bugfix release for deprecated function calls in numpy. Also updated 
+URL in setup.py to describe the GitHub repository that now houses the code. 
+No change to algorithm functionality.
+
+
 
 Version 2.0.1 - 26 June, 2020
 ------------------------------------------------------------------------------
