@@ -14,8 +14,15 @@ Dependencies:
     Numpy, Scipy, (optional) matplotlib
     
 """      
+try:
+    import importlib.metadata
+    version_method = 'importlib'
+except:
+    # 3rd party imports
+    import pkg_resources
+    version_method = 'pkg_resources'
 
-from __future__ import division
+from importlib.metadata import version
 
 # 3rd party imports
 import pkg_resources
@@ -23,4 +30,8 @@ import pkg_resources
 # This removes a useless layer of naming indirection.
 from hlsvdpropy.hlsvd import *
 
-__version__ = pkg_resources.get_distribution('hlsvdpropy').version
+if version_method == 'importlib':
+    __version__ = version('hlsvdpropy')
+else:
+    __version__ = pkg_resources.get_distribution('hlsvdpropy').version
+
