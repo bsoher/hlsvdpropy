@@ -39,7 +39,7 @@ import scipy.linalg.lapack as lapack
 
 
 
-def hlsvd(data, nsv_sought, dwell_time):
+def hlsvd(data, nsv_sought, dwell_time, sparse=False):
     """
     This calls HLSVDPRO version 2.x code, but simulates the hlsvd.hlsvd()
     call from HLSVDPRO version 1.0.x to maintain the API. See doc string
@@ -71,7 +71,7 @@ def hlsvd(data, nsv_sought, dwell_time):
 
     """
     m = len(data) // 2
-    r = hlsvdpro(data, nsv_sought, m=m)
+    r = hlsvdpro(data, nsv_sought, m=m, sparse=sparse)
     r = convert_hlsvd_result(r, dwell_time)
 
     nsv_found, singular_values, frequencies, damping_factors, amplitudes, phases = r[0:6]
@@ -261,9 +261,12 @@ def create_hlsvd_fids(result, npts, dwell, sum_results=False, convert=True):
         else:
             fids[i,:] = fids[i,:] * 0
 
-    if sum_results: result = np.sum(fids, axis=0)
+    if sum_results: 
+        r = np.sum(fids, axis=0)
+    else:
+        r = fids
 
-    return result
+    return r
 
 
 def get_testdata():
