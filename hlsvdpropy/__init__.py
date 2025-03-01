@@ -15,23 +15,14 @@ Dependencies:
     
 """      
 try:
-    import importlib.metadata
+    from importlib.metadata import version
     version_method = 'importlib'
-except:
+    __version__ = version('hlsvdpropy')
+except ImportError:
     # 3rd party imports
     import pkg_resources
     version_method = 'pkg_resources'
-
-from importlib.metadata import version
-
-# 3rd party imports
-import pkg_resources
+    __version__ = pkg_resources.get_distribution('hlsvdpropy').version
 
 # This removes a useless layer of naming indirection.
 from hlsvdpropy.hlsvd import *
-
-if version_method == 'importlib':
-    __version__ = version('hlsvdpropy')
-else:
-    __version__ = pkg_resources.get_distribution('hlsvdpropy').version
-
